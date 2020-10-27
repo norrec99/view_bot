@@ -1,0 +1,9 @@
+<!-- app/views/articles/_form.html.erb -->
+<div class="container">
+<%= simple_form_for [ @review] do |f| %>
+  <!-- [...] -->
+  <%= f.input :status, collection: Review::STATUSES %>
+  <%= f.association :user, collection: @review.application.users, label_method: :email, value_method: :id  %>
+   <%= f.button :submit %>  
+<% end %>
+</div>
