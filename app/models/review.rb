@@ -6,7 +6,7 @@ class Review < ApplicationRecord
   validates :location, presence: true
   validates :language, presence: true
   validates :reviewed_at, presence: true
-  validates :status, presence: true, default: 'pending'
+  validates :status, presence: true
   validates :link, presence: true
   validates :rating, presence: true
   validates :title, presence: true
