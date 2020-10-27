@@ -1,3 +1,36 @@
-<h1>This is the show page for an app</h1>
-<%= @application.name %>
-  
+<div class="container">
+  <div class="d-flex justify-content-around text-center">
+    <div>
+      <h4>AVG STARS</h4>
+      <%= @application.reviews.average(:rating) %>
+    </div>
+    <div>
+      <h4>REVIEWS</h4>
+      <%= @application.reviews.length %>
+    </div>
+  </div>
+</div>
+
+<% @application.reviews.each do |review| %>
+<%= link_to review_path(review) do %>
+  <div class="card-product">
+    <div class="card-product-infos">
+      <div class="d-flex justify-content-between">
+        <div>
+          <p><%= review.rating %></p>
+          <h2><%= review.title %></h2>
+          <p><%= review.content %></p>
+        </div>
+        <div>
+          <p>Name: <%= review.reviewer_name %></p>
+          <p>Store: <%= review.store_name %></p>
+          <p>Location: <%= review.location %></p>
+          <p>Language: <%= review.language %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+<% end %>
+
+
