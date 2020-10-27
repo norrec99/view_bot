@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_26_141801) do
+ActiveRecord::Schema.define(version: 2020_10_27_105009) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2020_10_26_141801) do
     t.string "store_name"
     t.string "language"
     t.date "reviewed_at"
-    t.string "status"
+    t.string "status", default: "pending"
     t.string "link"
     t.float "rating"
     t.string "title"
