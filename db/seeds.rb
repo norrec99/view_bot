@@ -2,30 +2,21 @@
 require "open-uri"
 require 'date'
 
-puts "cleaning the database"
+puts "Cleaning the database"
 
 Review.destroy_all
 User.destroy_all
 Application.destroy_all
 
+puts "Creating 4 users"
+user1 = User.create( password: "123456", email: "email1@email.com")
+user2 = User.create(  password: "123456", email: "email2@email.com")
+user3 = User.create(  password: "123456", email: "email3@email.com")
+user4 = User.create(  password: "123456", email: "email4@email.com")
 
-
-
-
-# require "open-uri"
-# require 'date'
-
-# Review.destroy_all
-# User.destroy_all
-# Champion.destroy_all
-# Booking.destroy_all
-
-# puts "Cleaning user database..."
-# puts "Creating users..."
-# user1 = User.create(username: "username1", password: "123456", email: "email1@email.com")
-# user2 = User.create( username: "username2", password: "123456", email: "email2@email.com")
-# user3 = User.create( username: "username3", password: "123456", email: "email3@email.com")
-# user4 = User.create( username: "username4", password: "123456", email: "email4@email.com")
+15.times do
+review = Review.create (reviewer_name: title: Faker::Marketing.buzzwords, )
+end
 
 # puts "Finished!"
 
