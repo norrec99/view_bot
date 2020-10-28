@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: "users/registrations"}
   root to: 'pages#home'
   
-  resources :applications, only: [ :show ] 
+  resources :applications, only: [ :show, :index ] 
   resources :reviews, only: [ :edit, :update, :show ]
+  get "/search", to: "pages#search"
 end

@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="text-center mb-5">
+    <%= link_to '+ Create New', applications_path, class: "btn btn-flat" %>
+  </div>
+    <h1>Find an existing application</h1>
+    <%= form_tag applications_path, method: :get, class: "form" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Application name.."
+      %>
+     <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+        <i class="fab fa-searchengin"></i>
+      <% end %>
+    <% end %>
+</div>
