@@ -4,8 +4,9 @@
         class: "form-control"
       %>
      <%= button_tag(type: "submit", class: "btn btn-primary") do %>
-        <i class="fab fa-searchengin"></i>
+        <i class="fab fa-searchengin"></i> 
       <% end %>
+        <%= link_to "See All", application_path(@application) %>
     <% end %>
 
 <div class="container">
@@ -22,13 +23,13 @@
 </div>
 
 
-<div class="reviews-container">
+<div class="container">
   <% @reviews.each do |review| %>
   <%= link_to review_path(review) do %>
-    <div class="card-product review-card">
+    <div class="card-product">
       <div class="card-product-infos">
         <div class="d-flex justify-content-between">
-          <div>
+          <div class="m-5">
             <p><%= review.rating %></p>
             <h2><%= review.title %></h2>
             <p><%= review.content %></p>
