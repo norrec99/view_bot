@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   
   resources :applications, only: [ :show ] 
   resources :reviews, only: [ :edit, :update, :show ]
+  get "/search", to: "pages#search"
 end
