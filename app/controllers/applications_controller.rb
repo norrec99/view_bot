@@ -11,4 +11,24 @@ class ApplicationsController < ApplicationController
       @applications = Application.all
     end
   end
+
+  def create
+    @application = Application.new(application_params)
+    @application.user = current_user
+    if @application.save
+      redirect_to @application, notice: 'application was successfully added.'
+    else
+      render :new
+    end
+  end
+
+  def new
+    @application = Application.new
+  end
+
+  private
+
+  def application_params
+    params.require(:application).permit(:name)
+  end
 end
