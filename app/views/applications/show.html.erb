@@ -1,3 +1,13 @@
+<%= form_tag application_path(@application), method: :get, class: "form" do %>
+      <%= select_tag :rating,
+        options_for_select(0..5),
+        class: "form-control"
+      %>
+     <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+        <i class="fab fa-searchengin"></i>
+      <% end %>
+    <% end %>
+
 <div class="container">
   <div class="d-flex justify-content-around text-center">
     <div>
@@ -11,26 +21,29 @@
   </div>
 </div>
 
-<% @application.reviews.each do |review| %>
-<%= link_to review_path(review) do %>
-  <div class="card-product">
-    <div class="card-product-infos">
-      <div class="d-flex justify-content-between">
-        <div>
-          <p><%= review.rating %></p>
-          <h2><%= review.title %></h2>
-          <p><%= review.content %></p>
-        </div>
-        <div>
-          <p>Name: <%= review.reviewer_name %></p>
-          <p>Store: <%= review.store_name %></p>
-          <p>Location: <%= review.location %></p>
-          <p>Language: <%= review.language %></p>
+
+<div class="reviews-container">
+  <% @reviews.each do |review| %>
+  <%= link_to review_path(review) do %>
+    <div class="card-product review-card">
+      <div class="card-product-infos">
+        <div class="d-flex justify-content-between">
+          <div>
+            <p><%= review.rating %></p>
+            <h2><%= review.title %></h2>
+            <p><%= review.content %></p>
+          </div>
+          <div>
+            <p>Name: <%= review.reviewer_name %></p>
+            <p>Store: <%= review.store_name %></p>
+            <p>Location: <%= review.location %></p>
+            <p>Language: <%= review.language %></p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
 
