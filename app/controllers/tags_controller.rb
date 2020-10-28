@@ -1,2 +1,4 @@
 class TagsController < ApplicationController
+ 
+
 end
