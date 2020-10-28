@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   
   resources :applications, only: [ :show ] 
-  resources :reviews, only: [ :edit, :update, :show ]
+  resources :reviews, only: [ :edit, :update, :show ] do
+    resources :review_tags, only: [:create]
+  end
 end

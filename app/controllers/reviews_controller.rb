@@ -1,11 +1,11 @@
 class ReviewsController < ApplicationController
-  
   def show
     @review = Review.find(params[:id])
   end
 
   def edit
     @review = Review.find(params[:id])
+    @review_tag = ReviewTag.new
   end
 
   def update
