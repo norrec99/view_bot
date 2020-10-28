@@ -1,50 +1,61 @@
-<%= form_tag application_path(@application), method: :get, class: "form" do %>
+    <div class="container">
+      <div class="d-flex justify-content-around text-center">
+        <div>
+          <h4>AVG STARS</h4>
+          <%= @application.reviews.average(:rating) %>
+        </div>
+        <div>
+          <h4>REVIEWS</h4>
+          <%= @application.reviews.length %>
+        </div>
+      </div>
+    </div>
+<div class="container">
+  <div class="row justify-content-between">
+    <div class="col-3">
+    <%= form_tag application_path(@application), method: :get, class: "form" do %>
       <%= select_tag :rating,
         options_for_select(0..5),
         class: "form-control"
       %>
-     <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+      <%= button_tag(type: "submit", class: "btn btn-primary") do %>
         <i class="fab fa-searchengin"></i> 
       <% end %>
         <%= link_to "See All", application_path(@application) %>
     <% end %>
-
-<div class="container">
-  <div class="d-flex justify-content-around text-center">
-    <div>
-      <h4>AVG STARS</h4>
-      <%= @application.reviews.average(:rating) %>
     </div>
-    <div>
-      <h4>REVIEWS</h4>
-      <%= @application.reviews.length %>
+    <div class="col-6">
+      <% @reviews.each do |review| %>
+      <%= link_to review_path(review) do %>
+        <div class="card-product">
+          <div class="card-product-infos">
+            <div class="d-flex justify-content-between">
+              <div class="m-5">
+                <p><%= review.rating %></p>
+                <h2><%= review.title %></h2>
+                <p><%= review.content %></p>
+              </div>
+              <div>
+                <p>Name: <%= review.reviewer_name %></p>
+                <p>Store: <%= review.store_name %></p>
+                <p>Location: <%= review.location %></p>
+                <p>Language: <%= review.language %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col-3">
+      <p>test</p>
     </div>
   </div>
 </div>
 
 
-<div class="container">
-  <% @reviews.each do |review| %>
-  <%= link_to review_path(review) do %>
-    <div class="card-product">
-      <div class="card-product-infos">
-        <div class="d-flex justify-content-between">
-          <div class="m-5">
-            <p><%= review.rating %></p>
-            <h2><%= review.title %></h2>
-            <p><%= review.content %></p>
-          </div>
-          <div>
-            <p>Name: <%= review.reviewer_name %></p>
-            <p>Store: <%= review.store_name %></p>
-            <p>Location: <%= review.location %></p>
-            <p>Language: <%= review.language %></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <% end %>
-  <% end %>
-</div>
+
+
+
 
 
