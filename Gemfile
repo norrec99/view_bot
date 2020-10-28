@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
+# # gem for pagination
+# gem 'will_paginate', '~> 3.3'
+
 gem 'faker'
 # added by cagatay 
 gem 'devise'
