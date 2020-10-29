@@ -31,10 +31,10 @@
       
     </div>
     <div class="text-center">
-      <p><%= link_to "Back", root_path, class:"btn btn-primary" %></p>
-      <p><%= link_to "Change Status", root_path, class:"btn btn-primary" %></p>
-      <p><%= link_to "Assign", root_path, class:"btn btn-primary" %></p>
-      <p><%= link_to "Change Category", root_path, class:"btn btn-primary" %></p>
+      <p><%= link_to "Back", application_path(@review.application), class:"btn btn-primary" %></p>
+      <p><%= link_to "Change Status", edit_review_path, class:"btn btn-primary" %></p>
+      <p><%= link_to "Assign", edit_review_path, class:"btn btn-primary" %></p>
+      <p><%= link_to "Change Category", edit_review_path, class:"btn btn-primary" %></p>
     </div>
   </div>
 </div>
