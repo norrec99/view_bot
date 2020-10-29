@@ -12,7 +12,11 @@
       <h3>Language</h3>
       <p><%= @review.language %></p>
       <h3>Category</h3>
-      <p><%= @review.language %></p>
+      <p><% @review.tags.each do |tag| %>
+        | <%= tag.name %> 
+        <% end %>
+      </p>
+
       <h3>Platform</h3>
       <p><%= @review.store_name %></p>
       <h3>Date</h3>

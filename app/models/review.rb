@@ -3,6 +3,8 @@ class Review < ApplicationRecord
   validates :status, inclusion: { in: STATUSES }
   belongs_to :application
   belongs_to :user
+  has_many :review_tags
+  has_many :tags, through: :review_tags
   validates :reviewer_name, presence: true
   validates :location, presence: true
   validates :language, presence: true
