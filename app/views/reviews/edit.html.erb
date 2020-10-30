@@ -2,17 +2,17 @@
 <div class="container">
 <%= simple_form_for [ @review, @review_tag] do |f| %>
   <!-- [...] -->
-  <%= f.input :tag, collection:Tag.all, input_html: { multiple: true, class: "multiple-select"}, include_hidden: false %>
-  <%= f.button :submit %>
+  <%= f.input :tag, label: "Category", wrapper_html: { class: 'mt-5' }, collection:Tag.all, input_html: { multiple: true, class: "multiple-select mt-5"}, include_hidden: false%>
+  <%= f.button :submit, class: "btn btn-flat mb-5" %>
 
 <% end %>
 </div>
 <div class="container">
 <%= simple_form_for [ @review] do |f| %>
   <!-- [...] -->
-  <%= f.input :status, collection: Review::STATUSES %>
-  <%= f.association :user, collection: @review.application.users, label_method: :email, value_method: :id  %>
+  <%= f.input :status, collection: Review::STATUSES, include_blank: false, include_hidden: false %>
+  <%= f.association :user, label: "Assign to", collection: @review.application.users, label_method: :email, value_method: :id,  include_blank: false, include_hidden: false %>
   
-   <%= f.button :submit %>  
+   <%= f.button :submit, class: "btn btn-flat" %>  
 <% end %>
 </div>
