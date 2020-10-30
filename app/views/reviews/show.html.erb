@@ -2,7 +2,14 @@
   <div class="row justify-content-around">
     <div class="col-2 text-center">
       <h3>Rating</h3>
-      <p><%= @review.rating %></p>
+      <div class="rating-stars mb-3">
+        <% @review.rating.to_i.times do %>
+          <i class="fas fa-star"></i>
+        <% end %>
+        <% (5-@review.rating.to_i).times do %>
+          <i class="far fa-star"></i>
+        <% end %>
+      </div>
       <h3>Reviewer</h3>
       <p><%= @review.reviewer_name %></p>
       <h3>Status</h3>
@@ -27,7 +34,7 @@
       <div class="card-product">
         <div class="card-product-infos">
             <div class="m-5">
-              <h3><%= @review.title %></h1>
+              <h3><%= @review.title.capitalize %></h1>
               <p><%= @review.content %></p>
             </div>
         </div>

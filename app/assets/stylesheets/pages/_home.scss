@@ -1,6 +1,14 @@
 // Specific CSS for your home-page
-.container, {
+.container {
   width: 51%;
   margin-left: 20%;
   margin-top: 2%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+    &:hover {
+      text-decoration: none;
+    }
 }

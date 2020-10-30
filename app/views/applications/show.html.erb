@@ -56,28 +56,35 @@
     </div>
     <div class="col-8">
         <div class="card-product">
-          <div class="card-product-infos">
-            <div class="">
-              <h4>AVG STARS</h4>
-              <%= @application.reviews.average(:rating) %>
-            </div>
-            <div>
-              <h4>REVIEWS</h4>
-              <%= @application.reviews.length %>
-            </div>
+          <div id="summary" class="card-product-infos d-flex justify-content-around text-center">
+              <div>
+                <h3>AVG STARS</h3>
+                <h4><%= @application.reviews.average(:rating) %></h4>
+              </div>
+              <div>
+                <h3>TOTAL REVIEWS</h3>
+                <h4><%= @application.reviews.length %></h4>
+              </div>
           </div>
         </div>   
       <% @reviews.each do |review| %>
       <%= link_to review_path(review) do %>
-        <div class="card-product">
+        <div class="card-product my-3">
           <div class="card-product-infos">
-            <div class="d-flex justify-content-between">
-              <div class="m-5">
-                <p><%= review.rating %></p>
+            <div class="row align-items-center justify-content-between">
+              <div class="col-8">
+                <div class="rating-stars mb-3">
+                  <% review.rating.to_i.times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                  <% (5-review.rating.to_i).times do %>
+                    <i class="far fa-star"></i>
+                  <% end %>
+                </div>
                 <h2><%= review.title %></h2>
                 <p><%= review.content %></p>
               </div>
-              <div>
+              <div class="col-4 text-right">
                 <p>Name: <%= review.reviewer_name %></p>
                 <p>Store: <%= review.store_name %></p>
                 <p>Location: <%= review.location %></p>
