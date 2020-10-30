@@ -8,6 +8,7 @@
           <div class="text-center mb-5">
             <%#= link_to '+ Join App', application, class: "btn btn-flat" %>
             <%# <img src="" class="card-img-top" alt="Application photo"> %>
+            <%= cl_image_tag @application.photo.key, height: 300, width: 400, crop: :fill %>
             <%= link_to '+ Join App', user_registration_path({user: {application_id: application.id}}), method: :patch, class: "btn btn-flat" %>
           </div>
         </div>
