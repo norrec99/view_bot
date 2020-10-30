@@ -38,7 +38,21 @@ categories.each do |category|
   tag = Tag.create!(name: category)
 end
 
+# attaching the photos
+file = URI.open('https://www.personalcomputerfixes.com/wp-content/uploads/2011/03/fb-hero-image-001.jpeg')
+application1.photo.attach(io: file, filename: 'facebook.jpg', content_type: 'image/png')
 
+file = URI.open('https://seeklogo.net/wp-content/uploads/2016/05/instagram-logo-vector-download.jpg')
+application2.photo.attach(io: file, filename: 'instagaram.jpg', content_type: 'image/png')
+
+file = URI.open('https://thekashmiriyat.co.uk/wp-content/uploads/2020/07/unnamed.png')
+application3.photo.attach(io: file, filename: 'twitter.jpg', content_type: 'image/png')
+
+file = URI.open('https://i.pinimg.com/474x/27/2d/df/272ddfccb6bb6161a6a9364ffc3703d7.jpg')
+application4.photo.attach(io: file, filename: 'TikTok.jpg', content_type: 'image/png')
+
+file = URI.open('https://i1.wp.com/allthings.how/wp-content/uploads/2020/04/allthings.how-how-to-change-zoom-background-on-iphone-and-ipad-zoom-logo-2.png?w=1200&ssl=1')
+application5.photo.attach(io: file, filename: 'zoom.jpg', content_type: 'image/png')
 
 
 user1 = User.create!( password: "123456", email: "hotmale@hotmail.com", application: application1)

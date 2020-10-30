@@ -3,9 +3,10 @@
   <h1>Existing applications on ViewBot</h1>
   <div class="cards-grid">
       <% @applications.each do |application| %>
-        <div class="card-category">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path application.photo.key, height: 300, width: 400, crop: :fill %>')">
           <%= link_to application.name, application %>
           <div class="text-center mb-5">
+          <%# <%= cl_image_tag @application.photo.key, height: 300, width: 400, crop: :fill %>
             <%#= link_to '+ Join App', application, class: "btn btn-flat" %>
             <%= link_to '+ Join App', user_registration_path({user: {application_id: application.id}}), method: :patch, class: "btn btn-flat" %>
           </div>
