@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  box-shadow: 0 5px 15px rgba(216, 216, 255, 0.5);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +9,28 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+#nav-id {
+  background: rgba(12, 0, 43, 1);
+}
+
+.navbar-light .navbar-brand {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
+  // color: rgba(0, 0, 0, 0.9);
+  color: white;
+  text-shadow: 5px 5px 25px rgba(216, 216, 255, 0.5);
 }
