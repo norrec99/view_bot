@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   
 
   resources :applications, only: [ :show, :index, :new, :create] 
-  resources :reviews, only: [ :edit, :update, :show ] do
+  resources :reviews, only: [ :edit, :update, :show, :create ] do
     resources :review_tags, only: [:create]
   end
   get "/search", to: "pages#search"

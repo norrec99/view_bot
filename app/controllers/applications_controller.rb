@@ -5,7 +5,7 @@ class ApplicationsController < ApplicationController
   def create
     application = Application.new(application_params)
     if application.save
-      render json: { success: true }
+      render json: { success: true, application_id: application.id }
     else
       render json: { success: false, errors: application.errors.messages }, status: :unprocessable_entity
     end
