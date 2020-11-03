@@ -54,7 +54,7 @@
               </div>
           </div>
         </div>   
-     <%= will_paginate @reviews %> 
+     <%= will_paginate @reviews, list_classes: %w(pagination justify-content-end) %> 
       <% @reviews.each do |review| %>
      
       <%= link_to review_path(review) do %>
@@ -81,7 +81,7 @@
         </div>
         <% end %>
       <% end %>
-      <%= will_paginate @reviews %>
+      <%= will_paginate @reviews, list_classes: %w(pagination justify-content-end) %>
     </div>
   </div>
 </div>
