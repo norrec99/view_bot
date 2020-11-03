@@ -5,7 +5,7 @@ ruby '2.6.6'
 
 # # gem for pagination
 # gem 'will_paginate', '~> 3.3'
-
+gem 'will_paginate'
 gem 'faker'
 # added by cagatay 
 gem 'devise'

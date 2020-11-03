@@ -8,6 +8,7 @@ const initSearchApplication = () => {
   if (searchForm) {
   searchForm.addEventListener('submit', ((event) => {
     event.preventDefault();
+    results.innerHTML = "";
     fetch(`https://data.42matters.com/api/v2.0/android/apps/search.json?access_token=5571e6fed7ab9cf13aa65e9d0bc0b9ef7e5f3f56&q=${searchInput.value}&limit=10`)
     .then(response => response.json())
     .then(data => {
