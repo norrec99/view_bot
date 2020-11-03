@@ -9,33 +9,39 @@ const fetchWithToken = (url, options) => {
   return fetch(url, options);
 }
 
-const postReviews = (application_id, reviews) => {
+const postReviews = async (application_id, reviews) => {
   // Iterate over each review
-  reviews.forEach((review) => {
-    // Create an instance of a review with the information given
-    // THIS IS THE PART THAT NEEDS TO BE FILLED OUT
-    fetchWithToken("/reviews", {
-      method: "POST",
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json"
-      },
+  let reviewsPromise = new Promise((resolve, reject) => {
+    reviews.forEach((review, index, array) => {
+      // Create an instance of a review with the information given
+      // THIS IS THE PART THAT NEEDS TO BE FILLED OUT
+      fetchWithToken("/reviews", {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
 
-      body: JSON.stringify({ review: {
-        reviewer_name: review.author_id,
-        rating: review.rating,
-        language: review.lang,
-        content: review.content,
-        reviewed_at: review.date,
-        application_id: application_id
-      }})
+        body: JSON.stringify({ review: {
+          reviewer_name: review.author_id,
+          rating: review.rating,
+          language: review.lang,
+          content: review.content,
+          reviewed_at: review.date,
+          application_id: application_id
+        }})
+      })
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data);
+      })
+      if (index === 99) {
+        setTimeout(function(){ window.location = `/applications`; }, 2000);
+        resolve();
+      }  
     })
-    .then(response => response.json())
-    .then((data) => {
-      console.log(data);
-    })
-  })
-  window.location.href = `/applications`;
+  });
+  const reviewsResult = await reviewsPromise
 }
 
 const retrieveReviews = (application_id, package_name) => {
