@@ -1,17 +1,17 @@
 class Review < ApplicationRecord
   STATUSES = ["approved", "pending", "declined"]
   validates :status, inclusion: { in: STATUSES }
-  belongs_to :application
-  belongs_to :user
+  belongs_to :application, optional: true
+  belongs_to :user, optional: true
   has_many :review_tags
   has_many :tags, through: :review_tags
   validates :reviewer_name, presence: true
-  validates :location, presence: true
+  # validates :location, presence: true
   validates :language, presence: true
   validates :reviewed_at, presence: true
-  validates :link, presence: true
+  # validates :link, presence: true
   validates :rating, presence: true
-  validates :title, presence: true
+  # validates :title, presence: true
   validates :content, presence: true
 
   after_update :send_notification

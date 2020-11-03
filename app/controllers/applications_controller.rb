@@ -1,11 +1,13 @@
 class ApplicationsController < ApplicationController
-
-  def new; end
+  
+  def new
+    @application = Application.new
+  end
 
   def create
     application = Application.new(application_params)
     if application.save
-      render json: { success: true }
+      render json: { success: true, application_id: application.id }
     else
       render json: { success: false, errors: application.errors.messages }, status: :unprocessable_entity
     end
@@ -31,39 +33,15 @@ class ApplicationsController < ApplicationController
 
   def index
     if params[:query].present?
-     sql_query = "applications.name @@ :query"
+      sql_query = "applications.name @@ :query"
       @applications = Application.where(sql_query, query: "%#{params[:query]}%")
     else
       @applications = Application.all
     end
   end
 
-
-
-  # def create
-
-  #   @application = Application.new(application_params)
-
-  #   @application.user = current_user
-
-  #   if @application.save
-
-  #     redirect_to @application, notice: 'application was successfully added.'
-
-  #   else
-
-  #     render :new
-
-  #   end
-
-  # end
-
-  def new
-    @application = Application.new
-  end
-
-
   private
+
   def application_params
     params.require(:application).permit(:name, :photo)
   end

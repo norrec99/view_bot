@@ -17,9 +17,18 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def create
+    review = Review.new(review_params)
+    if review.save
+      render json: { success: true, status: :created }
+    else
+      render json: { success: false, errors: review.errors.messages }, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def review_params
-    params.require(:review).permit(:status, :user_id)
+    params.require(:review).permit(:status, :user_id, :reviewer_name, :language, :content, :rating, :reviewed_at, :application_id)
   end
 end
