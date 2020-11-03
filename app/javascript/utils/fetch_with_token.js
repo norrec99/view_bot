@@ -11,6 +11,7 @@ const fetchWithToken = (url, options) => {
 
 const postReviews = async (application_id, reviews) => {
   // Iterate over each review
+  console.log("about to post reviews")
   let reviewsPromise = new Promise((resolve, reject) => {
     reviews.forEach((review, index, array) => {
       // Create an instance of a review with the information given
@@ -52,6 +53,7 @@ const retrieveReviews = (application_id, package_name) => {
   fetch(test_url)
   .then(response => response.json())
   .then(data => {
+    console.log("posting reviews")
     postReviews(application_id, data.reviews)
   });
 }
@@ -68,6 +70,7 @@ const postApplication = (name, package_name) => {
   })
   .then(response => response.json())
   .then((data) => {
+    console.log("retrieve Reviews")
     retrieveReviews(data["application_id"], package_name)
   })
 }
