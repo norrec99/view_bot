@@ -1,7 +1,9 @@
-<form id="search_app_form">
-  <input type="text" id="search">
-  <input type="submit" value="Search apps">
-</form>
- <%= link_to 'Back', search_path, class: "btn btn-flat" %>
-<ul id="results">
-</ul>
+<div class="container">
+  <form id="search_app_form">
+    <input type="text" id="search">
+    <input type="submit" value="Search apps">
+  </form>
+  <%= link_to 'Back', search_path, class: "btn btn-flat" %>
+  <ul class="d-flex aling-items-center" id="results">
+  </ul>
+</div>

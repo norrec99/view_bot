@@ -1,21 +1,21 @@
 <%= link_to 'Back', search_path, class: "btn btn-flat" %>
-<div class="container text-center">
+<div class="text-center">
   <h1>Existing applications on ViewBot</h1>
-  <div class="cards-grid">
+  <div>
+    <div class="card-container">
       <% @applications.each do |application| %>
-      <% if application.photo.attached? %>
-         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path application.photo.key, height: 300, width: 400, crop: :fill %>')"> 
-        <% else %>
-         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/reserve/bOvf94dPRxWu0u3QsPjF_tree.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')"> 
-        <%end %>
-           <%# <div class="grid-item"><img class="card-img-top" src="<%= cl_image_path application.photo.key if application.photo.attached?" alt="image cap"></div> %> 
-          <%= link_to application.name, application %>
-          <div class="text-center mb-5">
-          <%# <%= cl_image_tag @application.photo.key, height: 300, width: 400, crop: :fill %>
-            <%#= link_to '+ Join App', application, class: "btn btn-flat" %>
-            <%= link_to '+ Join App', user_registration_path({user: {application_id: application.id}}), method: :patch, class: "btn btn-flat" %>
+        <div class="card" style="width: 18rem;">
+          <% if application.photo.attached? %>
+            <img class="card-img-top" src="<%= cl_image_path application.photo.key, height: 300, width: 400, crop: :fill %>" alt="Card image cap"> 
+          <% else %>
+            <img class="card-img-top" src="https://images.unsplash.com/reserve/bOvf94dPRxWu0u3QsPjF_tree.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Card image cap">
+          <% end %>
+          <div class="card-body d-flex justify-content-between align-items-center">
+            <h5 class="card-title"><%= application.name %></h5>
+            <%= link_to "+", user_registration_path({user: {application_id: application.id}}), method: :patch, class: "btn btn-flat" %>
           </div>
         </div>
       <% end %>
+    </div>
   </div>
 </div>
