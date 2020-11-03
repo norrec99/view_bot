@@ -1,0 +1,31 @@
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  grid-gap: 1rem;
+  margin: 5% 10%;
+}
+
+.card-body {
+  height: 60px;
+  padding: 0.50rem;
+}
+
+.card-img-top {
+  height: 200px;
+  // width: 300px;
+  border-radius: 4%;
+}
+
+.card-container .btn {
+  // padding: 10px 30px;
+}
+
+.card-container h5 {
+  color: #000;
+  margin: 0;
+}
+
+.card-container .card {
+  border-radius: 4%;
+}
+
