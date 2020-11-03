@@ -14,7 +14,7 @@ const initSearchApplication = () => {
     .then(data => {
       data.results.forEach((result) => {
         const resultHTML = `
-        <li>
+        <li class="btn btn-success">
           <a href="#" class="js-application" data-title="${result.title}">
             ${result.title}
           </a>
