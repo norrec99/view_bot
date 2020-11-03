@@ -54,7 +54,9 @@
               </div>
           </div>
         </div>   
+     <%= will_paginate @reviews %> 
       <% @reviews.each do |review| %>
+     
       <%= link_to review_path(review) do %>
         <div class="card-product my-3">
           <div class="card-product-infos">
@@ -79,6 +81,7 @@
         </div>
         <% end %>
       <% end %>
+      <%= will_paginate @reviews %>
     </div>
   </div>
 </div>

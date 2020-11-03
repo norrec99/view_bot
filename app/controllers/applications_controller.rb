@@ -27,7 +27,7 @@ class ApplicationsController < ApplicationController
     elsif params[:reviewed_at].present?
       @reviews = Review.where(application: @application, reviewed_at: params[:reviewed_at])
     else
-      @reviews = Review.where(application: @application)
+      @reviews = Review.where(application: @application).paginate(:page => params[:page], :per_page=>5)
     end
   end
 
