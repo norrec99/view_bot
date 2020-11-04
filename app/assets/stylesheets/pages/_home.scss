@@ -1,18 +1,9 @@
 // Specific CSS for your home-page
-body {
-  background-color: #0c002b;
-}
 
-.container {
-  width: 51%;
-  margin-left: 20%;
-  margin-top: 2%;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-    &:hover {
-      text-decoration: none;
-    }
+#details {
+  width: 50%;
+  margin: 10% auto;
+  padding: 40px;
+  background: #0c002b;
+  box-shadow: 0 1px 8px rgba(216, 216, 255, 0.5);
 }
