@@ -1,0 +1,14 @@
+.filter-border {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.filter-border-left {
+  border-left: 1px solid #C0392B;
+}
+
+.review-border {
+  border-right: 1px solid #C0392B;
+  border-left: 1px solid #C0392B;
+}

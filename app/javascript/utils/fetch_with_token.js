@@ -11,6 +11,7 @@ const fetchWithToken = (url, options) => {
 
 const postReviews = async (application_id, reviews) => {
   // Iterate over each review
+  console.log("about to post reviews")
   let reviewsPromise = new Promise((resolve, reject) => {
     reviews.forEach((review, index, array) => {
       // Create an instance of a review with the information given
@@ -46,12 +47,13 @@ const postReviews = async (application_id, reviews) => {
 
 const retrieveReviews = (application_id, package_name) => {
 
-  const test_url = 'https://cors-anywhere.herokuapp.com/https://data.42matters.com/api/v2.0/android/apps/reviews.json?p=com.facebook.katana&access_token=5571e6fed7ab9cf13aa65e9d0bc0b9ef7e5f3f56&limit=100'
-  const real_url = `https://cors-anywhere.herokuapp.com/https://data.42matters.com/api/v2.0/android/apps/reviews.json?p=${package_name}&access_token=5571e6fed7ab9cf13aa65e9d0bc0b9ef7e5f3f56&limit=100`
+  const test_url = 'https://cors-anywhere.herokuapp.com/https://data.42matters.com/api/v2.0/android/apps/reviews.json?p=com.facebook.katana&access_token=d41b89aefcb3e9807a1cf88143523571bf25d5e3&limit=100'
+  const real_url = `https://cors-anywhere.herokuapp.com/https://data.42matters.com/api/v2.0/android/apps/reviews.json?p=${package_name}&access_token=d41b89aefcb3e9807a1cf88143523571bf25d5e3&limit=100`
   // NEED TO PAY HERE IF YOU WANT TO USE THIS FOR REAL APPS, TO MAKE FUNCTIONAL SWITCH TEST_URL WITH REAL_URL 👇
   fetch(test_url)
   .then(response => response.json())
   .then(data => {
+    console.log("posting reviews")
     postReviews(application_id, data.reviews)
   });
 }
@@ -68,6 +70,7 @@ const postApplication = (name, package_name) => {
   })
   .then(response => response.json())
   .then((data) => {
+    console.log("retrieve Reviews")
     retrieveReviews(data["application_id"], package_name)
   })
 }

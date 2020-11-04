@@ -23,10 +23,12 @@
       <h3>Date</h3>
       <p><%= @review.reviewed_at %></p>
     </div>
-    <div class="col-8">
-      <%= link_to @review.application.name, root_path, class:"btn btn-flat" %>
+    
+    <div class="review-border col-8">
+      <%= link_to @review.application.name, application_path(@review.application), class:"btn btn-flat" %>     
       <div>
       <div class="column">
+
       <div class="card-product">
         <div class="card-product-infos">
             <div class="m-5">
