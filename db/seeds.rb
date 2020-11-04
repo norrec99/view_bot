@@ -17,26 +17,19 @@ Tag.destroy_all
 # categories.each do |category|
 #   tag = Tag.create!(name: category)
 # end
+categories.each do |category|
+  tag = Tag.create!(name: category)
+end
 application1 = Application.create!(name: "Facebook" )
-categories.each do |category|
-  tag = Tag.create!(name: category)
-end
+
 application2 = Application.create!(name: "Instagram" )
-categories.each do |category|
-  tag = Tag.create!(name: category)
-end
+
 application3 = Application.create!(name: "Twitter" )
-categories.each do |category|
-  tag = Tag.create!(name: category)
-end
+
 application4 = Application.create!(name: "Tik Tok" )
-categories.each do |category|
-  tag = Tag.create!(name: category)
-end
+
 application5 = Application.create!(name: "Zoom" )
-categories.each do |category|
-  tag = Tag.create!(name: category)
-end
+
 
 # attaching the photos
 file = URI.open('https://www.personalcomputerfixes.com/wp-content/uploads/2011/03/fb-hero-image-001.jpeg')

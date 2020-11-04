@@ -1,4 +1,4 @@
-<%= link_to 'Back', search_path, class: "btn btn-flat" %>
+<%= link_to 'Back to searching exsiting apps', search_path, class: "btn btn-primary" %>
 <div class="text-center">
   <h1>Existing applications on ViewBot</h1>
   <div>
@@ -19,3 +19,8 @@
     </div>
   </div>
 </div>
+
+ <div class="text-center mb-5">
+ <p> Can't find your App ... </p>
+    <%= link_to 'Look on the playstore', new_application_path, class: "btn btn-flat" %>
+  </div>
