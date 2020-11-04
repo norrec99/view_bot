@@ -1,0 +1,15 @@
+// general styles for all pages 
+
+body {
+  background-color: #0c002b;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+    &:hover {
+      text-decoration: none;
+      color: black;
+    }
+}
