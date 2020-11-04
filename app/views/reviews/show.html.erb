@@ -1,6 +1,6 @@
 <div class="mt-5 ml-5">
   <div class="row justify-content-around">
-    <div class="review-border col-2 text-center">
+    <div class="col-2 text-center">
       <h3>Rating</h3>
       <div class="rating-stars mb-3">
         <% @review.rating.to_i.times do %>
@@ -22,7 +22,7 @@
       <h3>Date</h3>
       <p><%= @review.reviewed_at %></p>
     </div>
-    <div class="col-8">
+    <div class="review-border col-8">
       <%= link_to @review.application.name, application_path(@review.application), class:"btn btn-flat" %>
       <div class="card-product">
         <div class="card-product-infos">
@@ -33,7 +33,7 @@
       </div>
       
     </div>
-    <div class="review-border-link col-2 text-center">
+    <div class="col-2 text-center">
       <p><%= link_to "Back", application_path(@review.application), class:"btn btn-primary" %></p>
       <p><%= link_to "Change Status", edit_review_path, class:"btn btn-primary" %></p>
       <p><%= link_to "Assign", edit_review_path, class:"btn btn-primary" %></p>
