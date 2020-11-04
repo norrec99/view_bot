@@ -2,17 +2,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 40vh;
 }
 
 #boxes .container-box {
   position: relative;
-  width: 90%;
+  width: 70%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-template-rows: auto;
-  grid-gap: 0 70px;
-  margin: 20%;
+  grid-gap: 0 100px;
+  margin: 4%;
 }
 
 .container-box .box {
