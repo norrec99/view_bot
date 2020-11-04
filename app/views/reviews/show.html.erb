@@ -25,7 +25,7 @@
     </div>
     
     <div class="review-border col-8">
-      <%= link_to @review.application.name, application_path(@review.application), class:"btn btn-flat" %>     
+      <%= link_to @review.application.name, application_path(@review.application), class:"btn-flat" %>     
       <div>
       <div class="column">
 
@@ -35,9 +35,9 @@
               <p><%= @review.content %></p>
             </div>
             <div class="row" id="reviewcard">
-            <p><%= link_to "Change Status", edit_review_path, class:"btn-flat-reverse" %></p>
-            <p><%= link_to "Assign", edit_review_path, class:"btn-flat-reverse" %></p>
-            <p><%= link_to "Change Category", edit_review_path, class:"btn-flat-reverse" %></p>
+            <p><%= link_to "Change Status", edit_review_path, class:"btn-flat" %></p>
+            <p><%= link_to "Assign", edit_review_path, class:"btn-flat" %></p>
+            <p><%= link_to "Change Category", edit_review_path, class:"btn-flat" %></p>
             </div>
         </div>
         </div>
