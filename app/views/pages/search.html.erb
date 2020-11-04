@@ -1,9 +1,10 @@
-<div class="container">
-  <div class="text-center mb-5">
-    <%= link_to '+ Find your app on Play Store', new_application_path, class: "btn btn-flat" %>
-  </div>
-    <h1>Find an existing application</h1>
+<div class="container" >
+  
+    <h1 id="searching">Find an existing application</h1>
+   
     <%= form_tag applications_path, method: :get, class: "form" do %>
+   
+    <div class="d-flex">      
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
@@ -11,6 +12,8 @@
       %>
      <%= button_tag(type: "submit", class: "btn btn-primary") do %>
         <i class="fab fa-searchengin"></i>
+      
       <% end %>
-    <% end %>  
+      </div>
+    <% end %>   
 </div>

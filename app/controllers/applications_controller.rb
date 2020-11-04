@@ -19,13 +19,13 @@ class ApplicationsController < ApplicationController
     @language_options = Review.where(application: @application).map(&:language).uniq
     @reviewed_at_options = Review.where(application: @application).map(&:reviewed_at).uniq
     if params[:rating].present?
-      @reviews = Review.where(application: @application, rating: params[:rating])
+      @reviews = Review.where(application: @application, rating: params[:rating]).paginate(:page => params[:page], :per_page=>5)
     elsif params[:location].present?
-      @reviews = Review.where(application: @application, location: params[:location])
+      @reviews = Review.where(application: @application, location: params[:location]).paginate(:page => params[:page], :per_page=>5)
     elsif params[:language].present?
-      @reviews = Review.where(application: @application, language: params[:language])
+      @reviews = Review.where(application: @application, language: params[:language]).paginate(:page => params[:page], :per_page=>5)
     elsif params[:reviewed_at].present?
-      @reviews = Review.where(application: @application, reviewed_at: params[:reviewed_at])
+      @reviews = Review.where(application: @application, reviewed_at: params[:reviewed_at]).paginate(:page => params[:page], :per_page=>5)
     else
       @reviews = Review.where(application: @application).paginate(:page => params[:page], :per_page=>5)
     end
