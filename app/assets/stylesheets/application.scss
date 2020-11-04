@@ -15,45 +15,4 @@
 @import "pages/index";
 
 
-body {
-  color: #fff;
-}
 
-
-
-p {
-  font-size: 16px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  text-align: center;
-}
-
-h2 {
-  font-size: 24px;
-}
-
-#line {
-  width: 75%;
-  box-shadow: 0 5px 15px rgba(216, 216, 255, 0.5);
-}
-
-#ban-div {
-  position: relative;
-  width: 45%;
-  height: 120%;
-  padding: 40px;
-  background: #0c002b;
-  box-shadow: 0 0 9px rgba(216, 216, 255, 0.5);
-  margin: auto;
-}
-
-#details {
-  position: relative;
-  width: 45%;
-  height: 120%;
-  padding: 40px;
-  background: #0c002b;
-  box-shadow: 0 0 9px rgba(216, 216, 255, 0.5);
-  margin: auto;
-}
