@@ -1,0 +1,13 @@
+// Specific CSS for your home-page
+body {
+  background-color: #0c002b;
+}
+
+a {
+  text-decoration: none;
+  color: #0c002b;
+    &:hover {
+      text-decoration: none;
+      color: #0c002b;
+    }
+}

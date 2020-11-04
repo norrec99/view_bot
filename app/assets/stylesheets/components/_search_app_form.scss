@@ -1,0 +1,18 @@
+#search_app_form {
+  width: 70%;
+  /* This bit sets up the horizontal layout */
+  display:flex;
+  flex-direction:row;
+  
+  /* This bit draws the box around it */
+  border:1px solid #C0392B;
+
+  /* I've used padding so you can see the edges of the elements. */
+  padding:2px;
+}
+
+#search {
+  flex-grow: 2;
+  border: none;
+  color: #0c002b;
+}

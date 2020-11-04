@@ -31,14 +31,27 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #1EDD88;
+  background: #C0392B;
+  transition: background 0.3s ease;
+}
+.btn-flat-reverse {
+  color: #C0392B;
+  padding: 8px 24px;
+  border-color: #C0392B;
+  border-radius: 4px;
+  background: white;
   transition: background 0.3s ease;
 }
 
 .btn-flat:hover {
-  background: #1BCB7F;
+  background: #d83a29;
   color: white;
 }
+.btn-flat-reverse:hover {
+  background: #C0392B;
+  color: white;
+}
+
 
 #animated-button {
   position: absolute;

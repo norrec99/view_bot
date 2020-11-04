@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 2020_10_30_105119) do
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.bigint "application_id", null: false
     t.index ["application_id"], name: "index_reviews_on_application_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
