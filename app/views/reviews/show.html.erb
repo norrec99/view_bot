@@ -1,4 +1,4 @@
-<%= link_to "Back to reviews", application_path(@review.application), class:"btn-flat-reverse" %>
+<%= link_to "Back to reviews", application_path(@review.application), class:"btn btn-flat-reverse" %>
 <div class="mt-5 ml-5">
   <div class="row justify-content-around">
     <div class="col-2 text-center">
@@ -25,7 +25,7 @@
     </div>
     
     <div class="review-border col-8">
-      <%= link_to @review.application.name, application_path(@review.application), class:"btn-flat" %>     
+      <%= link_to @review.application.name, application_path(@review.application), class:"btn btn-flat" %>     
       <div>
       <div class="column">
 
@@ -35,9 +35,9 @@
               <p><%= @review.content %></p>
             </div>
             <div class="row" id="reviewcard">
-            <p><%= link_to "Change Status", edit_review_path, class:"btn-flat" %></p>
-            <p><%= link_to "Assign", edit_review_path, class:"btn-flat" %></p>
-            <p><%= link_to "Change Category", edit_review_path, class:"btn-flat" %></p>
+            <p><%= link_to "Change Status", edit_review_path, class:"btn btn-flat" %></p>
+            <p><%= link_to "Assign", edit_review_path, class:"btn btn-flat" %></p>
+            <p><%= link_to "Change Category", edit_review_path, class:"btn btn-flat" %></p>
             </div>
         </div>
         </div>
