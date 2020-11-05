@@ -4,39 +4,45 @@
       <div class="mt-3">
         <%= form_tag application_path(@application), method: :get, class: "form" do %>
           <%= label_tag :Filter_by_rating %>
-          <%= select_tag :rating,
-            options_for_select(0..5),
-            class: "form-control"
-          %>
-          <%= button_tag(type: "submit", class: "btn btn-flat-reverse") do %>
-            <i class="fab fa-searchengin"></i> 
-          <% end %>
+          <div class="d-flex align-items-center">
+            <%= select_tag :rating,
+              options_for_select(0..5),
+              class: "form-control"
+            %>
+            <%= button_tag(type: "submit", class: "btn btn-flat-reverse") do %>
+              <i class="fab fa-searchengin"></i> 
+            <% end %>
+          </div>
             <span><%= link_to "See All", application_path(@application) %></span>
         <% end %>
       </div>
       <div class="mt-3">
         <%= form_tag application_path(@application), method: :get, class: "form" do %>
           <%= label_tag :filter_by_language %>
-          <%= select_tag :language,
-            options_for_select(@language_options),
-            class: "form-control"
-          %>
-          <%= button_tag(type: "submit", class: "btn btn-flat-reverse") do %>
-            <i class="fab fa-searchengin"></i> 
-          <% end %>
+          <div class="d-flex align-items-center">
+            <%= select_tag :language,
+              options_for_select(@language_options),
+              class: "form-control"
+            %>
+            <%= button_tag(type: "submit", class: "btn btn-flat-reverse") do %>
+              <i class="fab fa-searchengin"></i> 
+            <% end %>
+          </div>
             <%= link_to "See All", application_path(@application) %>
         <% end %>
       </div>
       <div class="mt-3">
         <%= form_tag application_path(@application), method: :get, class: "form" do %>
           <%= label_tag :filter_by_date %>
-          <%= select_tag :reviewed_at,
-            options_for_select(@reviewed_at_options),
-            class: "form-control"
-          %>
-          <%= button_tag(type: "submit", class: "btn btn-flat-reverse") do %>
-            <i class="fab fa-searchengin"></i> 
-          <% end %>
+          <div class="d-flex align-items-center">
+            <%= select_tag :reviewed_at,
+              options_for_select(@reviewed_at_options),
+              class: "form-control"
+            %>
+            <%= button_tag(type: "submit", class: "btn btn-flat-reverse") do %>
+              <i class="fab fa-searchengin"></i> 
+            <% end %>
+          </div>
             <%= link_to "See All", application_path(@application) %>
         <% end %>
       </div>
