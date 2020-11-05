@@ -4,13 +4,13 @@
    
     <%= form_tag applications_path, method: :get, class: "form" do %>
    
-    <div class="d-flex">      
+    <div class="d-flex", id="section">      
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
         placeholder: "Application name.."
       %>
-     <%= button_tag(type: "submit", class: "btn-flat-reverse") do %>
+     <%= button_tag(type: "submit", class: "btn btn-flat-reverse") do %>
         <i class="fab fa-searchengin"></i>
       
       <% end %>
