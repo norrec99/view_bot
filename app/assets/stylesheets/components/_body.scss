@@ -1,15 +1,14 @@
-// general styles for all pages 
-
+// Specific CSS for your home-page
 body {
   background-color: #0c002b;
-  color: #fff;
+  color: white;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: #0c002b;
     &:hover {
       text-decoration: none;
-      color: black;
+      color: #0c002b;
     }
 }

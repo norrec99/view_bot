@@ -1,6 +1,6 @@
 .card-product {
   overflow: hidden;
-  height: 200px;
+  // height: 200px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -17,21 +17,21 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
-  color: black;
+  color: #0c002b;
 }
 
 .card-product h3 {
   font-size: 32px;
   font-weight: bold;
   margin: 0;
-  color: black;
+  color: #0c002b;
 }
 
 .card-product h4 {
   font-size: 24px;
   font-weight: bold;
   margin: 0;
-  color: black;
+  color: #0c002b;
 }
 
 .card-product p {
@@ -40,7 +40,7 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
-  color: black;
+  color: #0c002b;
 }
 
 .card-product .card-product-infos {

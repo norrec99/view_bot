@@ -1,0 +1,16 @@
+.filter-border {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  a {
+    color: #C0392B;
+  }
+}
+.filter-border-left {
+  border-left: 1px solid #C0392B;
+}
+
+.review-border {
+  border-left: 1px solid #C0392B;
+}

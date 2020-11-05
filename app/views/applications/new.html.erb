@@ -1,9 +1,13 @@
-<div class="container">
-  <form id="search_app_form">
-    <input type="text" id="search">
-    <input type="submit" value="Search apps">
-  </form>
-  <%= link_to 'Back', search_path, class: "btn btn-flat" %>
-  <ul class="d-flex aling-items-center" id="results">
+<%= link_to 'Back', search_path, class: "btn btn-flat-reverse" %>
+<div class="container mt-5">
+  <div class="d-flex flex-column">
+    <h2>Find your app on Play Store!</h2>
+      <form id="search_app_form">
+        <input type="text" id="search">
+        <input type="submit" value="Search apps" class="btn btn-flat">
+      </form>
+  </div>
+  
+  <ul class="d-flex justify-content-center mt-3" id="results">
   </ul>
 </div>
