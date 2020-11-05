@@ -8,7 +8,7 @@
           <% if application.photo.attached? %>
             <img class="card-img-top" src="<%= cl_image_path application.photo.key, height: 300, width: 400, crop: :fill %>" alt="Card image cap"> 
           <% else %>
-            <img class="card-img-top" src="https://cdn0.iconfinder.com/data/icons/free-social-media-set/24/vk-512.png" alt="Card image cap">
+            <img class="card-img-top" src="https://apkapp.de/wp-content/uploads/2019/06/unnamed-5.png" alt="Card image cap">
           <% end %>
           <%= link_to "+", user_registration_path({user: {application_id: application.id}}), method: :patch, class: "btn btn-flat" %>
           <div class="card-body d-flex justify-content-between align-items-center">
@@ -22,5 +22,5 @@
 
  <div class="text-center mb-5">
  <p> Can't find your App ... </p>
-    <%= link_to 'Look on the playstore', new_application_path, class: "btn btn-flat" %>
+    <%= link_to 'Look on the Play Store', new_application_path, class: "btn btn-flat" %>
   </div>
