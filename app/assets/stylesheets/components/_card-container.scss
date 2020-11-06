@@ -33,8 +33,16 @@
 
 .card .btn {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  font-size: 40px;
+  font-weight: 900;
+  /* color: #C0392B; */
+  background: transparent;
+  top: -12px;
+  right: -12px;
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+  }
 } 
 
 // .card-container .card {

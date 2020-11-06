@@ -35,7 +35,7 @@ application5 = Application.create!(name: "Zoom" )
 file = URI.open('https://www.personalcomputerfixes.com/wp-content/uploads/2011/03/fb-hero-image-001.jpeg')
 application1.photo.attach(io: file, filename: 'facebook.jpg', content_type: 'image/png')
 
-file = URI.open('https://seeklogo.net/wp-content/uploads/2016/05/instagram-logo-vector-download.jpg')
+file = URI.open('https://neilpatel.com/wp-content/uploads/2017/08/instagram-1.jpg')
 application2.photo.attach(io: file, filename: 'instagaram.jpg', content_type: 'image/png')
 
 file = URI.open('https://thekashmiriyat.co.uk/wp-content/uploads/2020/07/unnamed.png')

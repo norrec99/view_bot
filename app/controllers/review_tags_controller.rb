@@ -8,7 +8,7 @@ class ReviewTagsController < ApplicationController
       review_tag = ReviewTag.create!(review: @review, tag: tag)
     end
 
-    redirect_to edit_review_path(@review), notice: 'Review Tag was successfully created.'
+    redirect_to edit_review_path(@review), notice: 'Your tags were successfully added.'
 
   end
 
