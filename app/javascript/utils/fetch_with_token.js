@@ -47,8 +47,8 @@ const postReviews = async (application_id, reviews) => {
 
 const retrieveReviews = (application_id, package_name) => {
 
-  const test_url = 'https://cors-anywhere.herokuapp.com/https://data.42matters.com/api/v2.0/android/apps/reviews.json?p=com.facebook.katana&access_token=d41b89aefcb3e9807a1cf88143523571bf25d5e3&limit=100'
-  const real_url = `https://cors-anywhere.herokuapp.com/https://data.42matters.com/api/v2.0/android/apps/reviews.json?p=${package_name}&access_token=d41b89aefcb3e9807a1cf88143523571bf25d5e3&limit=100`
+  const test_url = 'https://cors-anywhere.herokuapp.com/https://data.42matters.com/api/v2.0/android/apps/reviews.json?p=com.facebook.katana&access_token=463da46782832f2354f97b126278bf93adf7ba4c&limit=100'
+  const real_url = `https://cors-anywhere.herokuapp.com/https://data.42matters.com/api/v2.0/android/apps/reviews.json?p=${package_name}&access_token=463da46782832f2354f97b126278bf93adf7ba4c&limit=100`
   // NEED TO PAY HERE IF YOU WANT TO USE THIS FOR REAL APPS, TO MAKE FUNCTIONAL SWITCH TEST_URL WITH REAL_URL 👇
   fetch(test_url)
   .then(response => response.json())
