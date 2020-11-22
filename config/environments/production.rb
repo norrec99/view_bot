@@ -120,5 +120,5 @@ Rails.application.configure do
     user_name: ENV["GMAIL_USERNAME"],
     password:ENV["GMAIL_PASSWORD"]
   }
-  config.action_mailer.default_url_options = { :host => 'viewbotshop.xyz/' }
+  config.action_mailer.default_url_options = { :host => 'viewbotshop.xyz' }
 end
