@@ -120,5 +120,8 @@ Rails.application.configure do
     user_name: ENV["GMAIL_USERNAME"],
     password:ENV["GMAIL_PASSWORD"]
   }
-  config.action_mailer.default_url_options = { :host => 'viewbot-app.herokuapp.com' }
+  config.action_mailer.default_url_options = { 
+  host: 'www.viewbotshop.xyz', 
+  protocol: 'https'
+  }
 end
