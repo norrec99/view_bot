@@ -1,23 +1,17 @@
-<!-- app/views/articles/_form.html.erb -->
 <%= link_to 'Back to application', review_path(@review), class: "btn btn-flat-reverse" %>
-
 <div class="container">
-
-<%= simple_form_for [ @review, @review_tag] do |f| %>
-  <!-- [...] -->
-  <%= f.input :tag, label: "Category", wrapper_html: { class: 'mt-5' }, collection:Tag.all.uniq, input_html: { multiple: true, class: "multiple-select mt-5"}, include_hidden: false %>
-  <%= f.button :submit, class: "btn btn-flat-reverse mb-5" %>
-
-
-<% end %>
+  <%= simple_form_for [ @review, @review_tag] do |f| %>
+    <!-- [...] -->
+    <%= f.input :tag, label: "Category", wrapper_html: { class: 'mt-5' }, collection:Tag.all.uniq, input_html: { multiple: true, class: "multiple-select mt-5"}, include_hidden: false %>
+    <%= f.button :submit, class: "btn btn-flat-reverse mb-5" %>
+  <% end %>
 </div>
-<div class="container">
-<%= simple_form_for [ @review], html: {novalidate: true, class: "no-bs-validation"} do |f| %>
-  <!-- [...] -->
-  <%= f.input :status, collection: Review::STATUSES, include_blank: false, include_hidden: false %>
-  <%= f.association :user, label: "Assign to", collection: @review.application.users, label_method: :email, value_method: :id,  include_blank: false, include_hidden: false %>
-  
-   <%= f.button :submit, class: "btn btn-flat" %>  
-<% end %>
 
+<div class="container">
+  <%= simple_form_for [ @review], html: {novalidate: true, class: "no-bs-validation"} do |f| %>
+    <!-- [...] -->
+    <%= f.input :status, collection: Review::STATUSES, include_blank: false, include_hidden: false %>
+    <%= f.association :user, label: "Assign to", collection: @review.application.users, label_method: :email, value_method: :id,  include_blank: false, include_hidden: false %>
+    <%= f.button :submit, class: "btn btn-flat" %>  
+  <% end %>
 </div>

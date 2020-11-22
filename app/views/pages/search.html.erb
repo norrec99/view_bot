@@ -1,19 +1,15 @@
 <div class="container mt-5" >
-  
-    <h1 id="searching" class="">Find an existing application on our platform</h1>
-   
-    <%= form_tag applications_path, method: :get, class: "form" do %>
-   
-    <div class="d-flex align-items-center", id="section">      
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control m-0",
-        placeholder: "Just provide the name.."
-      %>
-     <%= button_tag(type: "submit", class: "btn btn-flat") do %>
-        <i class="fab fa-searchengin"></i>
-      
-      <% end %>
-      </div>
-    <% end %>   
+  <h1 id="searching" class="">Find an existing application on our platform</h1>
+  <%= form_tag applications_path, method: :get, class: "form" do %>
+  <div class="d-flex align-items-center", id="section">      
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control m-0",
+      placeholder: "Just provide the name.."
+    %>
+    <%= button_tag(type: "submit", class: "btn btn-flat") do %>
+      <i class="fab fa-searchengin"></i>
+    <% end %>
+    </div>
+  <% end %>   
 </div>

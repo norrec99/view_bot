@@ -48,50 +48,49 @@
       </div>
     </div>
     <div class="filter-border-left col-8">
-        <div class="card-product my-3">
-          <div id="summary" class="card-product-infos d-flex justify-content-around text-center">
-              <div>
-                <h3>AVG STARS</h3>
-                <h4><%= @application.reviews.average(:rating).ceil(2) %></h4>
-              </div>
-              <div>
-                <h3>TOTAL REVIEWS</h3>
-                <h4><%= @application.reviews.length %></h4>
-              </div>
+      <div class="card-product my-3">
+        <div id="summary" class="card-product-infos d-flex justify-content-around text-center">
+          <div>
+            <h3>AVG STARS</h3>
+            <h4><%= @application.reviews.average(:rating).ceil(2) %></h4>
           </div>
-        </div>  
-     <% unless @reviews.empty? %> 
-     <%= will_paginate @reviews, list_classes: %w(pagination justify-content-end) %> 
-     <%end%>
+          <div>
+            <h3>TOTAL REVIEWS</h3>
+            <h4><%= @application.reviews.length %></h4>
+          </div>
+        </div>
+      </div>  
+      <% unless @reviews.empty? %> 
+        <%= will_paginate @reviews, list_classes: %w(pagination justify-content-end) %> 
+      <%end%>
       <% @reviews.each do |review| %>
-     
-      <%= link_to review_path(review) do %>
-        <div class="card-product my-3">
-          <div class="card-product-infos">
-            <div class="row align-items-center justify-content-between">
-              <div class="col-8">
-                <div class="rating-stars mb-3">
-                  <% review.rating.to_i.times do %>
-                    <i class="fas fa-star"></i>
-                  <% end %>
-                  <% (5-review.rating.to_i).times do %>
-                    <i class="far fa-star"></i>
-                  <% end %>
+        <%= link_to review_path(review) do %>
+          <div class="card-product my-3">
+            <div class="card-product-infos">
+              <div class="row align-items-center justify-content-between">
+                <div class="col-8">
+                  <div class="rating-stars mb-3">
+                    <% review.rating.to_i.times do %>
+                      <i class="fas fa-star"></i>
+                    <% end %>
+                    <% (5-review.rating.to_i).times do %>
+                      <i class="far fa-star"></i>
+                    <% end %>
+                  </div>
+                  <p class="p-2" style="background-color: rgba(211,211,211,0.5)"><%= review.content %></p>
                 </div>
-                <p class="p-2" style="background-color: rgba(211,211,211,0.5)"><%= review.content %></p>
-              </div>
-              <div class="col-4 text-right">
-                <p>Language: <%= review.language %></p>
-                <p>Date: <%= review.reviewed_at %></p>
+                <div class="col-4 text-right">
+                  <p>Language: <%= review.language %></p>
+                  <p>Date: <%= review.reviewed_at %></p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
         <% end %>
       <% end %>
       <% unless @reviews.empty? %> 
-      <%= will_paginate @reviews, list_classes: %w(pagination justify-content-end) %>
-       <%end%>
+        <%= will_paginate @reviews, list_classes: %w(pagination justify-content-end) %>
+      <%end%>
     </div>
   </div>
 </div>
