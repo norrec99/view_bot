@@ -2,6 +2,12 @@
 
 Instant reach to application reviews and getting notification via Slack when a new one is submitted on the App Store.
 
+https://viewbot-app.herokuapp.com/
+
+<br>
+<br>
+<br>
+
 ![viewbotgif](https://github.com/ozanisgor/simplefolio/blob/master/src/assets/viewbot.gif)
 
 
