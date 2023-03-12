@@ -10,3 +10,8 @@ Instant reach to application reviews and getting notification via Slack when a n
 
 [Le Wagon coding bootcamp](https://www.lewagon.com) Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates) 
 
+## Known Issues
+
+- Since App Store API trial ends app doesn't work.
+- Heroku stoped free services. We will migrate to another service soon.
+
